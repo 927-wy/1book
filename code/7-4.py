@@ -229,7 +229,7 @@ def nb_dga():
     cv = CountVectorizer(ngram_range=(2, 2), decode_error="ignore",
                                           token_pattern=r"\w", min_df=1)
     x= cv.fit_transform(x_domain_list).toarray()
-
+    #clf应该就是这个算法，明天可以使用这个算法来预测DGA，应该是会有这个预测函数，181010找找
     clf = GaussianNB()
     print  cross_validation.cross_val_score(clf, x, y, n_jobs=-1, cv=3)
 
