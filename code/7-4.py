@@ -216,13 +216,13 @@ def nb_dga():
     x1_domain_list = load_alexa("../data/top-1000.csv")
     x2_domain_list = load_dga("../data/dga-cryptolocke-1000.txt")
     x3_domain_list = load_dga("../data/dga-post-tovar-goz-1000.txt")
-
+    #实际上就是连在一起
     x_domain_list=np.concatenate((x1_domain_list, x2_domain_list,x3_domain_list))
-
+    #生成这么多长度的向量
     y1=[0]*len(x1_domain_list)
     y2=[1]*len(x2_domain_list)
     y3=[2]*len(x3_domain_list)
-
+    #最后x_domain_list和y成为最终的一个大向量
     y=np.concatenate((y1, y2,y3))
 
 
